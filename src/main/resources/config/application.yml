@@ -1,0 +1,9 @@
+server:
+  port: 8080
+spring:
+  kafka:
+    bootstrap-servers: 192.168.31.59:9092
+    consumer:
+      enable-auto-commit: true
+      group-id: kafka
+      auto-offset-reset: earliest

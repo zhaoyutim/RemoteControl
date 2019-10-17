@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pi Control</title>
+</head>
+<body>
+<button id="post-btn-up">Up</button>
+<button id="post-btn-down">Down</button>
+<button id="post-btn-left">Left</button>
+<button id="post-btn-right">Right</button>
+<script>
+    const button_up = document.getElementById('post-btn-up');
+
+    button_up.addEventListener('click', async _ => {
+        try {
+            const response = await fetch('http://192.168.31.59:8080/mvcmd', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "direction": "up"
+                })
+            });
+            console.log('Completed!', response);
+        } catch(err) {
+            console.error(`Error: ${err}`);
+        }
+    });
+</script>
+<script>
+    const button_down = document.getElementById('post-btn-down');
+
+    button_down.addEventListener('click', async _ => {
+        try {
+            const response = await fetch('http://192.168.31.59:8080/mvcmd', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "direction": "down"
+                })
+            });
+            console.log('Completed!', response);
+        } catch(err) {
+            console.error(`Error: ${err}`);
+        }
+    });
+</script>
+<script>
+    const button_left = document.getElementById('post-btn-left');
+
+    button_left.addEventListener('click', async _ => {
+        try {
+            const response = await fetch('http://192.168.31.59:8080/mvcmd', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "direction": "left"
+                })
+            });
+            console.log('Completed!', response);
+        } catch(err) {
+            console.error(`Error: ${err}`);
+        }
+    });
+</script>
+<script>
+    const button_right = document.getElementById('post-btn-right');
+
+    button_right.addEventListener('click', async _ => {
+        try {
+            const response = await fetch('http://192.168.31.59:8080/mvcmd', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "direction": "right"
+                })
+            });
+            console.log('Completed!', response);
+        } catch(err) {
+            console.error(`Error: ${err}`);
+        }
+    });
+</script>
+
+</body>
+</html>
