@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MovementCmdRepository extends JpaRepository<MovementCmd, Long> {
+
+    MovementCmd findTopByOrderByIdDesc();
+
 }

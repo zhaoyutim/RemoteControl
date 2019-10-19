@@ -19,4 +19,8 @@ public class MovementService {
     public void postMovement(MovementCmd movementCmd){
         movementCmdRepository.save(movementCmd);
     }
+
+    public MovementCmd GetOneMovement(){
+        return movementCmdRepository.findTopByOrderByIdDesc();
+    }
 }

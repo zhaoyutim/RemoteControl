@@ -26,9 +26,14 @@ class MotionController {
         return movementService.getAllMovement();
     }
 
+    @GetMapping(value = "/getmvcmd")
+    public MovementCmd getOneMovement(){
+        return movementService.GetOneMovement();
+    }
+
     @PostMapping(value = "/mvcmd")
     public void postMovement(@RequestBody MovementCmd movementCmd){
-        kakfaPeoducer.send(movementCmd.getDirection().toString());
+        //kakfaPeoducer.send(movementCmd.getDirection().toString());
         movementService.postMovement(movementCmd);
     }
 }
